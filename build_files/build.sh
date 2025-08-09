@@ -20,9 +20,7 @@ sed -i -e 's/^enabled=.*/enabled=1/' \
        /etc/yum.repos.d/terra.repo || true
 
 # General
-dnf5 -y --refresh install \ 
-	brave-browser \
-	zed rocminfo rocm-opencl rocm-clinfo rocm-hip
+dnf5 -y --refresh install brave-browser zed rocminfo rocm-opencl rocm-clinfo rocm-hip
 
 # Virtualisation
 #dnf5 install -y \
