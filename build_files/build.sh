@@ -13,8 +13,8 @@ fi
 [ -L /opt ] || ln -s ../var/opt /opt
 mkdir -p /var/opt
 
-rpm --import https://repos.fyralabs.com/keys/terra.gpg 
-dnf5 -y install https://repos.fyralabs.com/terra-release-latest.fc$(rpm -E %fedora).noarch.rpm zed ghostty starship
+rpm --import https://repos.fyralabs.com/terra$(rpm -E %fedora)/key.asc
+dnf5 -y install --repofrompath=terra,https://repos.fyralabs.com/terra$(rpm -E %fedora)/ terra-release zed
 
 
 dnf5 install -y brave-browser
