@@ -22,7 +22,7 @@ sed -i -e 's/^enabled=.*/enabled=1/' \
 # General
 dnf5 -y --refresh install \ 
 	brave-browser \
-	zed rocminfo rocm-opencl rocm-clinfo rocm-hip distrobox
+	zed rocminfo rocm-opencl rocm-clinfo rocm-hip
 
 # Virtualisation
 #dnf5 install -y \
