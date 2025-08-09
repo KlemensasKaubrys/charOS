@@ -13,6 +13,10 @@ fi
 [ -L /opt ] || ln -s ../var/opt /opt
 mkdir -p /var/opt
 
+rpm --import https://repos.fyralabs.com/keys/terra.gpg 
+dnf5 -y install https://repos.fyralabs.com/terra-release-latest.fc$(rpm -E %fedora).noarch.rpm zed ghostty starship
+
+
 dnf5 install -y brave-browser
 
 systemctl enable podman.socket
