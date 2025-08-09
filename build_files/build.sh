@@ -27,12 +27,9 @@ dnf5 -y --refresh install \
 # Virtualisation
 dnf5 install -y \
 	@virtualization \
-	virt-install \
 	virt-manager \
 	qemu-kvm \
 	libvirt \
-	libvirt-daemon-config-network \
-	libvirt-daemon-kvm \
 	virt-viewer \
 	bridge-utils
 
