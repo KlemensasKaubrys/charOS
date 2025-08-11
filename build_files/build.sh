@@ -13,8 +13,10 @@ sed -i -e 's/^enabled=.*/enabled=1/' \
        -e "s|^baseurl=.*|baseurl=https://repos.fyralabs.com/terra$(rpm -E %fedora)/\$basearch/|" \
        /etc/yum.repos.d/terra.repo || true
 
-dnf5 -y --refresh install brave-browser zed rocminfo rocm-opencl rocm-clinfo rocm-hip
+dnf5 install -y --refresh brave-browser zed
 
 dnf5 install -y @virtualization virt-manager qemu-kvm libvirt virt-viewer bridge-utils distrobox ptyxis
+dnf5 install -y rocminfo rocm-opencl rocm-clinfo rocm-hip rocm-hip-devel rocm-runtime-devel hipcc rocminfo rocm-smi
+
 systemctl enable libvirtd
 systemctl enable podman.socket
