@@ -17,11 +17,12 @@ dnf5 install -y --refresh --setopt=install_weak_deps=False --exclude=rootfiles @
 
 dnf5 install -y --refresh brave-browser zed
 dnf5 install -y @virtualization virt-manager qemu-kvm libvirt virt-viewer bridge-utils distrobox ptyxis
-dnf5 install -y rocminfo rocm-opencl rocm-clinfo rocm-hip rocm-hip-devel rocm-runtime-devel hipcc rocminfo rocm-smi
+dnf5 install -y rocminfo rocm-opencl rocm-clinfo rocm-hip rocm-hip-devel rocm-runtime-devel hipcc rocm-smi
 
-rm -f /etc/fstab /usr/etc/fstab
-install -Dm0644 /dev/null /usr/etc/fstab
-dnf5 -y remove anaconda\* initial-setup\* || true
-systemd-sysusers --root=/ --validate || true
+dnf5 -y remove 'anaconda*' 'initial-setup*' || true
 
 systemctl enable podman.socket
+systemctl enable lightdm || true
+
+: > /etc/fstab
+chmod 0644 /etc/fstab
