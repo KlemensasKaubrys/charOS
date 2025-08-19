@@ -15,13 +15,13 @@ sed -i -e 's/^enabled=.*/enabled=1/' \
 
 dnf5 install -y --refresh --setopt=install_weak_deps=False --exclude=rootfiles @xfce-desktop-environment
 
+dnf5 install -y --refresh brave-browser zed
+dnf5 install -y @virtualization virt-manager qemu-kvm libvirt virt-viewer bridge-utils distrobox ptyxis
+dnf5 install -y rocminfo rocm-opencl rocm-clinfo rocm-hip rocm-hip-devel rocm-runtime-devel hipcc rocminfo rocm-smi
+
 rm -f /etc/fstab /usr/etc/fstab
 install -Dm0644 /dev/null /usr/etc/fstab
 dnf5 -y remove anaconda\* initial-setup\* || true
 systemd-sysusers --root=/ --validate || true
-
-dnf5 install -y --refresh brave-browser zed
-dnf5 install -y @virtualization virt-manager qemu-kvm libvirt virt-viewer bridge-utils distrobox ptyxis
-dnf5 install -y rocminfo rocm-opencl rocm-clinfo rocm-hip rocm-hip-devel rocm-runtime-devel hipcc rocminfo rocm-smi
 
 systemctl enable podman.socket
