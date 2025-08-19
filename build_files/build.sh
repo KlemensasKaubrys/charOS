@@ -14,6 +14,7 @@ sed -i -e 's/^enabled=.*/enabled=1/' \
        /etc/yum.repos.d/terra.repo || true
 
 dnf5 install -y --refresh brave-browser zed
+dnf5 install -y --refresh --setopt=install_weak_deps=False @xfce
 
 dnf5 install -y @virtualization virt-manager qemu-kvm libvirt virt-viewer bridge-utils distrobox ptyxis
 dnf5 install -y rocminfo rocm-opencl rocm-clinfo rocm-hip rocm-hip-devel rocm-runtime-devel hipcc rocminfo rocm-smi
