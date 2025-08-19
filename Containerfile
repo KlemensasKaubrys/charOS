@@ -1,7 +1,7 @@
 FROM scratch AS ctx
 COPY build_files /
 
-FROM ghcr.io/ublue-os/bazzite:stable as charOS
+FROM ghcr.io/ublue-os/ucore-minimal:stable as charOS
 
 COPY system_files /
 
