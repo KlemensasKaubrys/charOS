@@ -23,6 +23,3 @@ dnf5 -y remove 'anaconda*' 'initial-setup*' || true
 
 systemctl enable podman.socket
 systemctl enable lightdm || true
-
-: > /etc/fstab
-chmod 0644 /etc/fstab
