@@ -19,5 +19,4 @@ dnf5 install -y brave-browser zed
 dnf5 install -y @virtualization virt-manager qemu-kvm libvirt virt-viewer bridge-utils distrobox ptyxis
 dnf5 install -y rocminfo rocm-opencl rocm-clinfo rocm-hip rocm-hip-devel rocm-runtime-devel hipcc rocminfo rocm-smi
 
-systemctl enable libvirtd
 systemctl enable podman.socket
